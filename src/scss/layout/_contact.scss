@@ -1,0 +1,70 @@
+.contact {
+	@include section();
+
+	&__body {
+		@extend %cnt;
+	}
+
+	&__title {
+		@include h2();
+		margin-bottom: 2.6rem;
+	}
+
+	&__content {}
+
+	&__input, &__textarea {
+		width: 100%;
+		font-size: 2rem;
+		color: $paleWhite;
+		background-color: transparent;
+		border-bottom: 1px solid $mainWhite;
+		outline: none;
+		padding: 1.2rem 0;
+	}
+
+	&__input {
+		&_title {
+			font-size: 2.8rem;
+		}
+	}
+
+	&__textarea {
+		resize: none;
+	}
+
+	&__name {
+		margin-bottom: 2.5rem;
+	}
+
+	&__email {
+		margin-bottom: 3rem;
+	}
+
+	&__message {
+		margin-bottom: 5rem;
+	}
+
+	&__button {
+		@include btn();
+	}
+
+
+	@media ($desktop) {
+		@include section($mb: 33.4rem);
+		&__input, &__textarea {
+			font-size: 2.5rem;
+			&_title {
+				font-size: 4.47rem;
+			}
+		}
+		&__name {
+			margin-bottom: 5.9rem;
+		}
+		&__email {
+			margin-bottom: 6.4rem;
+		}
+		&__message {
+			margin-bottom: 10.2rem;
+		}
+	}
+}

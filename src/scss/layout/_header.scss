@@ -1,0 +1,119 @@
+.header.out {
+	transform: translateY(-100%);
+}
+.header.p-2 {
+	padding-block: 2rem;
+}
+.header {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	background-color: $mainBlack;
+	transition: all 0.5s ease;
+	padding-block: 2.5rem;
+
+	&__body {
+		@extend %cnt;
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+	}
+
+	& a {color: $mainWhite}
+	
+	&__logo {
+		font-size: 2rem;
+		font-weight: 700;
+		line-height: 1.2;
+		text-transform: uppercase;
+	}
+
+	&__burger {
+		cursor: pointer;
+		&_open {
+			width: 3rem;
+			& img {
+				@extend %img;
+			}
+		}
+
+		&_close {
+			display: none;
+			width: 3rem;
+			& img {
+				@extend %img;
+			}
+		}
+
+		&.active {
+			& .header__burger_open {display: none;}
+			& .header__burger_close {display: block;}
+		}
+	}
+
+	&__menu {
+		position: fixed;
+		top: 6rem;
+		right: -100%;
+		width: 32rem;
+		height: 100%;
+		background-color: $mainBlack;
+		transition: all 0.3s ease 0s;
+
+		&.show {
+			right: 0;
+		}
+	}
+
+	&__menu-list {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+	}
+
+	&__menu-item {
+		&:not(:last-child) { 
+			margin-bottom: 1rem;
+		}
+	}
+
+	&__menu-link {
+		display: inline-block;
+		font-size: 2rem;
+		font-weight: 500;
+		line-height: 1.2;
+		text-transform: uppercase;
+		padding: 0.5rem 2.8rem;
+		transition: all 0.3s ease 0s;
+
+		&:hover {
+			transform: scale(1.1);
+		}
+	}
+
+
+	@media ($desktop) { 
+		padding-block: 8.5rem;
+
+		&__burger {
+			display: none;
+		}
+
+		&__menu {
+			display: block;
+			position: static;
+			width: auto;
+			height: auto;
+			background-color: transparent;
+		}
+		&__menu-list {
+			flex-direction: row;
+		}
+		&__menu-item {
+			&:not(:last-child) { 
+				margin-bottom: 0;
+			}
+		}
+	}
+}
