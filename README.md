@@ -2,7 +2,7 @@ This project was created for example my work
 
 ## Links
 
-- [Live Site URL](https://evgiss.github.io/Template-portfolio-photographers/)
+- [Live Site URL](https://eugiss.github.io/Template-portfolio-photographers/)
 
 
 ## Screenshots
